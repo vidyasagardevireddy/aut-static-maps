@@ -135,6 +135,8 @@ interface OsmStaticMapsOptions {
    * @defaultValue `false`
    */
   haltOnConsoleError?: Boolean;
+
+  executablePath?:string;
 }
 
 /** Renders a map controlled by the options passed and returns an image */

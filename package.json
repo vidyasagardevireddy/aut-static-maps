@@ -1,18 +1,18 @@
 {
-  "name": "osm-static-maps",
-  "version": "3.10.3",
+  "name": "aut-static-maps",
+  "version": "0.0.1",
   "description": "Create a static image of a map with the features you want",
-  "author": "Julian Perelli",
+  "author": "Vidya Sagar",
   "contributors": [
     {
-      "name": "Julian Perelli",
-      "email": "jperelli@gmail.com"
+      "name": "Vidya Sagar",
+      "email": "vidya.sagar@mtap.in"
     }
   ],
   "license": "GPLv2",
   "repository": {
     "type": "git",
-    "url": "http://github.com/jperelli/osm-static-maps.git"
+    "url": "https://github.com/vidyasagardevireddy/aut-static-maps"
   },
   "dependencies": {
     "chrome-aws-lambda": "^5.5.0",

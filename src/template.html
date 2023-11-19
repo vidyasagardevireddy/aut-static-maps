@@ -79,8 +79,8 @@
                 {{/if}}
                 var geojsonlayer = L.geoJson({{{ geojson }}}, {
                     pointToLayer: function (feature, latlng) {
-                        if (feature.markerIconOptions) {
-                            return L.marker(latlng, {icon: L.icon(feature.markerIconOptions)})
+                        if (feature.options.markerIconOptions) {
+                            return L.marker(latlng, {icon: L.icon(feature.options.markerIconOptions)})
                         }
                         return L.marker(latlng, {icon: myIcon});
                     },

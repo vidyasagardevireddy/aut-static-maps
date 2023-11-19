@@ -6,6 +6,7 @@ const path = require('path');
 const child_process = require("child_process");
 
 let chrome = { args: [] };
+let executablePath = '/usr/bin/chromium-browser';
 let puppeteer;
 
 if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
@@ -47,7 +48,7 @@ class Browser {
     return puppeteer.launch({
       args: [...chrome.args, "--no-sandbox", "--disable-setuid-sandbox"],
       defaultViewport: chrome.defaultViewport,
-      executablePath: await chrome.executablePath,
+      executablePath: executablePath,
       headless: true,
       ignoreHTTPSErrors: true,
     });
@@ -122,6 +123,7 @@ module.exports = function(options) {
     options.style = (options.style && (typeof options.style === 'string' ? options.style : JSON.stringify(options.style))) || false;
     options.timeout = typeof options.timeout == undefined ? 20000 : options.timeout;
     options.haltOnConsoleError = !!options.haltOnConsoleError;
+    if(options.executablePath) executablePath = options.executablePath;
 
     (async () => {
 
